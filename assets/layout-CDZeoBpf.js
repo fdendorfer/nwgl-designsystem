@@ -1,1 +1,0 @@
-import{d as e}from"./pinia-D7GAMojH.js";const s=e("layout",{state:()=>({mobileMenuIsOpen:!1}),actions:{toggleMobileMenu(){this.mobileMenuIsOpen=!this.mobileMenuIsOpen},closeMobileMenu(){this.mobileMenuIsOpen=!1},openMobileMenu(){this.mobileMenuIsOpen=!0}}});export{s as u};
