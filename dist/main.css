@@ -5238,9 +5238,6 @@ main .accordion{
   width: 100%;
 }
 /*----------------------------------------*\
-  AVATAR
-\*----------------------------------------*/
-/*----------------------------------------*\
   BACK TO TOP BTN
 \*----------------------------------------*/
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -6375,9 +6372,10 @@ main .accordion{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .card--flat.card--clickable a::after,
-  .card--flat.card--clickable btn::after{
-  --tw-border-opacity: 0;
-}
+  .card--flat.card--clickable .btn::after {
+    content: '';
+    --tw-border-opacity: 0;
+  }
 .card--flat{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -6405,6 +6403,10 @@ main .accordion{
 }
 .card--flat .card__footer__action{
   margin-top: 1rem;
+}
+.card--flat a::after,
+  .card--flat .btn::after{
+  border-width: 0px;
 }
 /* card--flat is extended for .search-result items */
 .card--flat .card__content{
@@ -6463,7 +6465,10 @@ main .accordion{
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card__image svg{
+.card__image .pdf-preview-loading{
+  position: absolute;
+}
+.card__image svg:not(.pdf-preview-loading svg){
   position: absolute;
   z-index: 10;
   top: 50%;
@@ -7013,9 +7018,10 @@ main .accordion{
   --tw-shadow-colored: 0px 0px 0px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.card--list.card--clickable a::after,.card--list.card--clickable btn::after{
-  --tw-border-opacity: 0;
-}
+.card--list.card--clickable a::after,.card--list.card--clickable .btn::after {
+    content: '';
+    --tw-border-opacity: 0;
+  }
 .card--list{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -7043,6 +7049,9 @@ main .accordion{
 }
 .card--list .card__footer__action{
   margin-top: 1rem;
+}
+.card--list a::after,.card--list .btn::after{
+  border-width: 0px;
 }
 .card--list .card__content{
   background-color: transparent;
@@ -7083,6 +7092,17 @@ main .accordion{
   .card--list:hover{
   color: inherit;
   text-decoration-line: none; /* override general styling for links in main */
+}
+/* Remove hover effect for clickable card */
+.card--list a::after,
+  .card--list .btn::after {
+    content: '';
+    --tw-border-opacity: 0;
+  }
+/* Remove hover effect for clickable card */
+.card--list a::after,
+  .card--list .btn::after{
+  border-width: 0px;
 }
 @media (min-width: 640px) {
 .card--list{
@@ -7247,9 +7267,10 @@ main .accordion{
   --tw-shadow-colored: 0px 0px 0px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.card--list-without-image.card--clickable a::after,.card--list-without-image.card--clickable btn::after{
-  --tw-border-opacity: 0;
-}
+.card--list-without-image.card--clickable a::after,.card--list-without-image.card--clickable .btn::after {
+    content: '';
+    --tw-border-opacity: 0;
+  }
 .card--list-without-image{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -7277,6 +7298,9 @@ main .accordion{
 }
 .card--list-without-image .card__footer__action{
   margin-top: 1rem;
+}
+.card--list-without-image a::after,.card--list-without-image .btn::after{
+  border-width: 0px;
 }
 .card--list-without-image .card__content{
   background-color: transparent;
@@ -11116,12 +11140,6 @@ th[aria-sort='ascending'] .table__sorter span::after {
     content: '▲';
   }
 /*----------------------------------------*\
-  TOGGLE
-\*----------------------------------------*/
-/*----------------------------------------*\
-  CAROUSEL
-\*----------------------------------------*/
-/*----------------------------------------*\
   LANGUAGE SWITCHER
 \*----------------------------------------*/
 .language-switcher{
@@ -14069,12 +14087,14 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(134 85 246 / var(--tw-ring-opacity));
 }
+.index-page__card .index-page__card-footer__action{
+  margin: 0px !important;
+  height: 0px !important;
+  padding: 0px !important;
+}
 .index-page__card-clickable{
   cursor: pointer;
   position: relative;
-  transition-property: box-shadow;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Whole Card clickable */
 .index-page__card-clickable a::after,
@@ -14085,48 +14105,98 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
     right: 0px;
     left: 0px;
     bottom: 0px;
-    border-width: 2px;
-    border-color: rgb(249 250 251 / var(--tw-border-opacity));
-    --tw-border-opacity: 0;
-    transition-property: all;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-/* Hover shadow effect */
-.index-page__card-clickable:hover,
-  .index-page__card-clickable:focus-within{
-  --tw-shadow: 0px 6px 10px -5px rgba(0,0,0,0.06), 0px 15px 25px -3px rgba(0,0,0,0.09);
-  --tw-shadow-colored: 0px 6px 10px -5px var(--tw-shadow-color), 0px 15px 25px -3px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 /* Title hover interaction color */
 .index-page__card-clickable:hover .index-page__card-title, .index-page__card-clickable:focus-within .index-page__card-title{
   color: var(--color-primary-700);
 }
-.index-page__card-clickable:hover a::after,
-    .index-page__card-clickable:hover .btn::after,
-    .index-page__card-clickable:focus-within a::after,
-    .index-page__card-clickable:focus-within .btn::after {
-      content: '';
-      --tw-border-opacity: 0.9;
-    }
+.index-page__card-image{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* default Tailwind value */
+}
+.index-page__card-image + .grid{
+  margin-top: 1.25rem;
+}
+@media (min-width: 480px){
+
+  .index-page__card-image + .grid{
+    margin-top: 1.75rem;
+  }
+}
+@media (min-width: 640px){
+
+  .index-page__card-image + .grid{
+    margin-top: 2.25rem;
+  }
+}
+@media (min-width: 1024px){
+
+  .index-page__card-image + .grid{
+    margin-top: 2.5rem;
+  }
+}
+@media (min-width: 1280px){
+
+  .index-page__card-image + .grid{
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 1920px){
+
+  .index-page__card-image + .grid{
+    margin-top: 4rem;
+  }
+}
+.index-page__card-image + .section__subtitle{
+  padding-top: 3rem;
+}
+@media (min-width: 1024px){
+
+  .index-page__card-image + .section__subtitle{
+    padding-top: 4rem;
+  }
+}
+@media (min-width: 1920px){
+
+  .index-page__card-image + .section__subtitle{
+    padding-top: 5rem;
+  }
+}
+@media print {
+
+  .index-page__card-image {
+    display: block; /* needed so that content in grid don't break the break-inside rule */
+  }
+}
+.storybook-demo-ratio .index-page__card-image > div > div > *{
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(76 29 149 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 243 255 / var(--tw-bg-opacity));
+  border-width: 1px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(124 58 237 / var(--tw-border-opacity));
+}
 .index-page__card-image{
   position: relative;
-  height: 150px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 .index-page__card-image img{
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 400px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (min-width: 768px) {
 .index-page__card-image{
-    height: 200px;
+    display: flex;
     max-width: 200px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
   }
   }
@@ -14164,6 +14234,16 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*----------------------------------------*\
+  PDF Preview
+\*----------------------------------------*/
+.pdf-preview-loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 /*----------------------------------------*\
   STICKY NAVIGATION
