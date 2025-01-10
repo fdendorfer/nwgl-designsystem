@@ -561,6 +561,8 @@ video {
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
   color: var(--blue-800);
   background-color: var(--blue-100);
   font-size: 0.75rem;
@@ -631,6 +633,8 @@ video {
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
   color: var(--blue-800);
   background-color: var(--blue-100);
   font-size: 0.75rem;
@@ -5241,7 +5245,7 @@ main .accordion{
   font-weight: 400;
 }
 .accordion__button:hover{
-  color: var(--action-hover-main);
+  color: var(--primary-700);
 }
 .accordion__button{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -5616,15 +5620,23 @@ main .accordion{
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
 }
 .badge--disabled{
   opacity: 0.4 !important;
   cursor: default !important;
 }
+.badge--disabled.badge--gray{
+  opacity: 1 !important;
+  color: var(--text-disabled-text) !important;
+  background-color: var(--ui-elements-tag-background-disabled-fill) !important;
+  border-color: var(--ui-elements-tag-background-disabled-stroke);
+}
 /* COLORS */
 .badge--gray{
-  color: var(--gray-800);
-  background-color: var(--color-secondary-100);
+  color: var(--text-main-text);
+  background-color: var(--ui-elements-tag-background-default);
 }
 .badge--red,
 .badge--error{
@@ -5655,8 +5667,8 @@ main .accordion{
   background-color: var(--indigo-100);
 }
 .badge--negative{
-  color: var(--gray-100);
-  background-color: var(--gray-800);
+  color: var(--standard-white);
+  background-color: var(--primary-600);
 }
 .badge--purple{
   color: var(--purple-800);
@@ -8577,15 +8589,15 @@ input[type='search']::-webkit-search-results-decoration {
 \*----------------------------------------*/
 .link,
 main a{
-  color: var(--action-main);
+  color: var(--primary-600);
 }
 .link:hover,
 main a:hover{
-  color: var(--action-hover-main);
+  color: var(--primary-700);
 }
 .link:focus,
 main a:focus{
-  color: var(--action-main);
+  color: var(--primary-700);
 }
 .link,
 main a{
@@ -8618,15 +8630,15 @@ main a[rel*='external']{
 }
 .link--external,
 main a[rel*='external']{
-  color: var(--action-main);
+  color: var(--primary-600);
 }
 .link--external:hover,
 main a[rel*='external']:hover{
-  color: var(--action-hover-main);
+  color: var(--primary-700);
 }
 .link--external:focus,
 main a[rel*='external']:focus{
-  color: var(--action-main);
+  color: var(--primary-700);
 }
 .link--external,
 main a[rel*='external']{
@@ -8700,6 +8712,8 @@ main a[rel*='external'].link--block + .link.link--block{
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
   color: var(--green-800);
   background-color: var(--green-100);
   font-size: 0.75rem;
@@ -8788,6 +8802,8 @@ main a[rel*='external'].link--block + .link.link--block{
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
   font-size: 0.75rem;
 }
 @media (min-width: 768px){
@@ -10990,6 +11006,7 @@ select:disabled + .select__icon, .input--disabled select + .select__icon{
   overflow-y: hidden;
   white-space: nowrap;
   border-bottom-width: 1px;
+  border-color: var(--elements-divider-50);
 }
 .bg--accent-01 .tab__controls{
   border-color: var(--elements-divider-200);
@@ -14568,9 +14585,6 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.navy li > a:not(.navy__back).active:hover::after, .navy li > span:not(.navy__title).active:hover::after, .navy li > button.active:hover::after{
-  width: 2px;
-}
 .navy li > a:not(.navy__back).active::after, .navy li > span:not(.navy__title).active::after, .navy li > button.active::after {
       content: '';
       display: block;
@@ -16050,6 +16064,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
 }
 .top-header{
   border-bottom-width: 1px;
+  border-color: var(--elements-divider-50);
   position: relative;
   background-color: var(--background-main);
   color: var(--ui-elements-inputfield-select-text-main-text);
@@ -16235,6 +16250,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   position: relative;
   z-index: 40;
   border-bottom-width: 1px;
+  border-color: var(--elements-divider-50);
   background-color: var(--background-main);
   color: var(--text-main-text);
 }
@@ -16719,7 +16735,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
 .breadcrumb ul ul li a.active::after {
       content: '';
       display: block;
-      background-color: var(--action-hover-main);
+      background-color: var(--primary-600);
       width: 2px;
       position: absolute;
       top: 0px;
@@ -16792,14 +16808,13 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
 }
 .footer-navigation-links{
   display: flex;
-  flex-direction: row;
-}
-.footer-navigation-links > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  flex-direction: column;
 }
 @media (min-width: 640px){
+
+  .footer-navigation-links{
+    flex-direction: row;
+  }
 
   .footer-navigation-links > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
@@ -16808,22 +16823,28 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   }
 }
 .footer-navigation-links{
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 @media (min-width: 1280px){
 
   .footer-navigation-links{
-    font-size: 0.875rem;
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 1920px){
 
   .footer-navigation-links{
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 .footer-navigation-select{
-  width: 16rem;
+  width: 100%;
+}
+@media (min-width: 768px){
+
+  .footer-navigation-select{
+    width: 16rem;
+  }
 }
 .footer__link{
   display: inline-flex;
@@ -17062,7 +17083,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   MOBILE-MENU-V2
 \*----------------------------------------*/
 .mobile-menu-v2{
-  background-color: var(--color-secondary-500);
+  background-color: var(--ui-elements-navigation-02);
   visibility: hidden;
   opacity: 0;
 }
@@ -17273,8 +17294,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   border-bottom-width: 1px;
   border-color: var(--elements-divider-50);
   --tw-border-opacity: 1;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: var(--background-main);
   width: 100%;
 }
 .mobile-menu-v2-body .mobile-menu-v2-navigation-container .mobile-menu-v2-navigation li > a.active::after {
@@ -17362,16 +17382,16 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   border-bottom-width: 1px;
   border-color: var(--elements-divider-50);
   --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: var(--text-main-text);
 }
 .mobile-menu-v2-body .top-bar-navigation--mobile ul a:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: var(--text-main-text);
 }
 .mobile-menu-v2-body .top-bar-navigation--mobile ul a:focus{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: var(--text-main-text);
+}
+.mobile-menu-v2-body .top-bar-navigation--mobile ul a:hover{
+  background-color: var(--ui-elements-navigation-03);
 }
 .mobile-menu-v2-body .top-bar-navigation--mobile ul a{
   width: 100%;
@@ -17387,10 +17407,8 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
   width: 1.25rem;
 }
 .mobile-menu-v2__level{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: var(--background-main);
+  border-color: var(--background-main);
   position: absolute;
   left: 0;
   right: 0;
