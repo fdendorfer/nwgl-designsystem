@@ -2837,6 +2837,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -2865,6 +2866,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -2894,6 +2896,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -2921,6 +2924,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -2949,6 +2953,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -2978,6 +2983,7 @@ body{
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -3026,7 +3032,26 @@ body{
   font-weight: 400;
   padding-bottom: 2.5rem;
 }
-:is(.bg--secondary-900, .bg--secondary-800, .bg--secondary-700, .bg--secondary-600, .bg--secondary-500){
+:is(
+    .bg--secondary-900,
+    .bg--secondary-800,
+    .bg--secondary-700,
+    .bg--secondary-600,
+    .bg--secondary-500,
+    .bg--accent-03,
+    .bg--accent-04
+  ) :is(.section__title, .section__subtitle){
+  color: var(--standard-white);
+}
+:is(
+    .bg--secondary-900,
+    .bg--secondary-800,
+    .bg--secondary-700,
+    .bg--secondary-600,
+    .bg--secondary-500,
+    .bg--accent-03,
+    .bg--accent-04
+  ) .section__action .btn{
   color: var(--standard-white);
 }
 :is(.bg--secondary-400, .bg--secondary-300, .bg--secondary-200, .bg--secondary-100, .bg--secondary-50){
@@ -8363,6 +8388,10 @@ textarea,
 select{
   color: var(--text-main-text);
 }
+option{
+  background-color: var(--ui-elements-inputfield-select-background-main-background);
+  color: var(--ui-elements-inputfield-select-text-main-text);
+}
 .input::-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder{
   color: var(--action-secondary);
 }
@@ -11443,6 +11472,15 @@ table[data-default-theme="dark"].table--zebra {
   .language-switcher select{
     padding-left: 1rem;
   }
+}
+.language-switcher option{
+  background-color: var(--color-secondary-600);
+}
+.language-switcher option:hover{
+  background-color: var(--color-secondary-500);
+}
+.language-switcher option{
+  color: var(--standard-white);
 }
 .language-switcher option:disabled{
   color: var(--action-disabled);
